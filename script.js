@@ -13,11 +13,11 @@ function getComputerChoice (){
 };
 
 // ruch gracza
-function playerSelectionn() {
-    let choice = prompt("rock, paper or scissors?");
-    let selection = choice.toLowerCase();
-    return selection;
-}
+//function playerSelectionn() {
+//    let choice = prompt("rock, paper or scissors?");
+//    let selection = choice.toLowerCase();
+//    return selection;
+//}
 
 // wynik gry między graczem a komputerem
 function playRound(playerSelection, computerSelection) {
@@ -47,8 +47,34 @@ function playRound(playerSelection, computerSelection) {
     
 }
 
-let playerSelection = playerSelectionn();
+const playerScore = document.querySelector("#player");
+const computerScore = document.querySelector("#computer");
+
+const rock = document.querySelector('#rock');
+rock.addEventListener("click", () => {
+    let result = playRound("rock", getComputerChoice());
+    playerScore.textContent = "1";
+});
+
+const paper = document.querySelector('#paper');
+paper.addEventListener("click", () => {
+    let result = playRound("paper", getComputerChoice());
+    console.log(result);
+});
+
+const scissors = document.querySelector('#scissors');
+scissors.addEventListener("click", () => {
+    let result = playRound("scissors", getComputerChoice());
+    console.log(result);
+});
+
+
+
+
+
+const playerSelection = "rock";
 const computerSelection = getComputerChoice();
+
 
 function game() {
     
@@ -63,3 +89,7 @@ function game() {
 
 console.log(game());
 
+//const rock = document.querySelector('#rock');
+//rock.addEventListener("click", () => {
+//    alert("Hello");
+//});
